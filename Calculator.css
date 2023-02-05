@@ -1,0 +1,13 @@
+  .container {
+    height: 200px;
+    width: 160px;
+    margin-left: 26%;
+  }
+  
+  button {
+    width: 50px;
+  }
+  
+  input{
+    text-align: right;
+  }
