@@ -4,6 +4,7 @@ function Timer() {
    const [time,setTime] = useState({ms:0,s:0,m:0,h:0})
    const [inter,setInter] = useState()
     var updatedms = time.ms,updateds = time.s,updatedm = time.m,updatedh = time.h
+    
     function startHandler(){
         run()
         setInter(setInterval(run,10))
