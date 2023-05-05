@@ -25,6 +25,7 @@ function App() {
 
   function onSubmitHandler (e){
       e.preventDefault()
+    //setDisplaySearch(items.filter((res)=>res?.title.includes(search)))
       setDisplaySearch(items.filter((res)=>res?.title==search))
   }
   return (
