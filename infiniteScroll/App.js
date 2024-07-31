@@ -9,12 +9,11 @@ function App() {
   const [page, setPage] = useState(1)
 
   useEffect(()=>{
-    console.log(page*rows-rows)
-    console.log(page*rows)
     setPost([...Post.slice(0,page*rows)])
   },[page])
 
   const handlescroll = () => {
+    
     if(window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight){
       setPage(prev=>prev+1)
     }
@@ -22,6 +21,10 @@ function App() {
 
   useEffect(()=>{
     window.addEventListener('scroll',handlescroll)
+// prevent the memory leak by removing the listener on component unmount 
+return () => {
+    window.removeEventListener('scroll', handlescroll);
+  };
   },[])
 
   return (
